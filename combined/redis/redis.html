@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redis 命令 | VuePress</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Just playing around">
+    <link rel="preload" href="/assets/css/0.styles.3f949b7f.css" as="style"><link rel="preload" href="/assets/js/app.266af1c3.js" as="script"><link rel="preload" href="/assets/js/2.0861db78.js" as="script"><link rel="preload" href="/assets/js/9.6772c857.js" as="script"><link rel="prefetch" href="/assets/js/10.7858b385.js"><link rel="prefetch" href="/assets/js/11.78a8ae46.js"><link rel="prefetch" href="/assets/js/12.b2277f4c.js"><link rel="prefetch" href="/assets/js/13.ce8da26a.js"><link rel="prefetch" href="/assets/js/14.5bc1d6e3.js"><link rel="prefetch" href="/assets/js/15.0ca5b6ca.js"><link rel="prefetch" href="/assets/js/16.3ff01d64.js"><link rel="prefetch" href="/assets/js/3.8099ba9f.js"><link rel="prefetch" href="/assets/js/4.ce18d72f.js"><link rel="prefetch" href="/assets/js/5.adfb67bc.js"><link rel="prefetch" href="/assets/js/6.4a1f583a.js"><link rel="prefetch" href="/assets/js/7.507a8e2d.js"><link rel="prefetch" href="/assets/js/8.40e91942.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3f949b7f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VuePress</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/common/basics/basics.html" class="nav-link">
+  常见知识点
+</a></div><div class="nav-item"><a href="/combined/typescript/typescript.html" class="nav-link">
+  综合
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/common/basics/basics.html" class="nav-link">
+  常见知识点
+</a></div><div class="nav-item"><a href="/combined/typescript/typescript.html" class="nav-link">
+  综合
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>综合</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/combined/cmd/cmd.html" class="sidebar-link">常用命令</a></li><li><a href="/combined/typescript/typescript.html" class="sidebar-link">Typescript</a></li><li><a href="/combined/postgresql/postgresql.html" class="sidebar-link">PostgreSQL</a></li><li><a href="/combined/redis/redis.html" aria-current="page" class="active sidebar-link">Redis</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/combined/redis/redis.html#有序集合" class="sidebar-link">有序集合</a></li><li class="sidebar-sub-header"><a href="/combined/redis/redis.html#哈希" class="sidebar-link">哈希</a></li></ul></li><li><a href="/combined/vue/vue.html" class="sidebar-link">Vue</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="redis-命令"><a href="#redis-命令" class="header-anchor">#</a> Redis 命令</h1> <p>1、set($key, $val) ===&gt; 设定指定key的值，可以已存储其他值，覆盖旧值</p> <p>2、get($key) ===&gt; 获取指定key的值，不存在，返回null，key存储的值不是字符串，返回错误</p> <p>3、expire($key, $time)  ===&gt;  设置$key的过期时间</p> <p>4、del($key)   ===&gt;   删除已存在的健,不存在的key忽略</p> <p>5、incr($key)  ===&gt;   将key中存储的数字值增一</p> <p>6、smembers($key) ====&gt; 返回集合中的所有的成员，不存在的集合key视为空集合</p> <h2 id="有序集合"><a href="#有序集合" class="header-anchor">#</a> 有序集合</h2> <p>1、zcard($key) ===&gt;  返回集合中元素的数量，没有返回0</p> <p>2、zrevrange($key, start, stop, 'withscores') ===&gt;  返回有序集中，start到stop区间内的成员（从大到小排序）
+zrevrangeByScore
+3、zrange($key, start, stop)  ===&gt; 从小到大排序，-1最后一个成员
+zrangeByScore
+4、zadd($key, $num, $val)  ===&gt;  将一个或多个元素及分数值添加到有序集中</p> <p>5、sadd($key, $val) ===&gt;  将一个或多个元素加到集合中</p> <p>6、zrem($key, $val)  ===&gt;  移除有序集中的一个或多个成员，不存在的忽略</p> <p>7、zincrby($key, 1, $val)  ===&gt;  对有序集合中指定成员的分数加上增量 +1</p> <p>8、zscore($key, $val)  ===&gt;  返回有序集中，成员的分数值，不是有序集key的成员🔥key不存在，返回nil</p> <p>9、sismember($key, $val)  ===&gt;  判断元素是否是集合的成员</p> <p>10、zcount(key, min, max)   ====&gt;   计算有序集合中指定分数区间的成员数量(-inf, +inf)</p> <h2 id="哈希"><a href="#哈希" class="header-anchor">#</a> 哈希</h2> <p>1、hget($key, $field)  ===&gt;  返回哈希表中指定字断的值</p> <p>2、hset($key, $field, $val) ===&gt;  为哈希表中的字断赋值，已存在的旧值被覆盖</p> <p>3、hmset($key, [$field =&gt; $val, $field1 =&gt; $val2])  ===&gt;  同时将多个field-val对设置到哈希表中</p> <p>4、hgetall($key)  ===&gt;  返回哈希表中所有的字断和值</p> <p>5、hincrby($key, $field, 1)  ===&gt; 给牧歌key值的一个字断加1</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/combined/postgresql/postgresql.html" class="prev">
+        PostgreSQL
+      </a></span> <span class="next"><a href="/combined/vue/vue.html">
+        Vue
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.266af1c3.js" defer></script><script src="/assets/js/2.0861db78.js" defer></script><script src="/assets/js/9.6772c857.js" defer></script>
+  </body>
+</html>

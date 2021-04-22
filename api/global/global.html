@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>全局说明 | VuePress</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Just playing around">
+    <link rel="preload" href="/assets/css/0.styles.3f949b7f.css" as="style"><link rel="preload" href="/assets/js/app.266af1c3.js" as="script"><link rel="preload" href="/assets/js/2.0861db78.js" as="script"><link rel="preload" href="/assets/js/6.4a1f583a.js" as="script"><link rel="prefetch" href="/assets/js/10.7858b385.js"><link rel="prefetch" href="/assets/js/11.78a8ae46.js"><link rel="prefetch" href="/assets/js/12.b2277f4c.js"><link rel="prefetch" href="/assets/js/13.ce8da26a.js"><link rel="prefetch" href="/assets/js/14.5bc1d6e3.js"><link rel="prefetch" href="/assets/js/15.0ca5b6ca.js"><link rel="prefetch" href="/assets/js/16.3ff01d64.js"><link rel="prefetch" href="/assets/js/3.8099ba9f.js"><link rel="prefetch" href="/assets/js/4.ce18d72f.js"><link rel="prefetch" href="/assets/js/5.adfb67bc.js"><link rel="prefetch" href="/assets/js/7.507a8e2d.js"><link rel="prefetch" href="/assets/js/8.40e91942.js"><link rel="prefetch" href="/assets/js/9.6772c857.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3f949b7f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VuePress</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/common/basics/basics.html" class="nav-link">
+  常见知识点
+</a></div><div class="nav-item"><a href="/combined/typescript/typescript.html" class="nav-link">
+  综合
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/common/basics/basics.html" class="nav-link">
+  常见知识点
+</a></div><div class="nav-item"><a href="/combined/typescript/typescript.html" class="nav-link">
+  综合
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="全局说明"><a href="#全局说明" class="header-anchor">#</a> 全局说明</h1> <h2 id="请求地址"><a href="#请求地址" class="header-anchor">#</a> 请求地址</h2> <div class="language- extra-class"><pre><code>https://xxx.com
+</code></pre></div><h2 id="请求方式"><a href="#请求方式" class="header-anchor">#</a> 请求方式</h2> <p>接口为<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP" target="_blank" rel="noopener noreferrer">http协议<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，上行都是form格式，支持压缩的，在header中，增加Accept-Encoding: gzip, deflate</p> <div class="custom-block warning"><p class="custom-block-title">注意</p> <p>上传文件的接口和网页提交无差别，必须符合http协议<br>
+下行为json格式，服务器会自动根据header部分开启压缩<br>
+自定义的头信息，一律为 &quot;X-&quot;开始，单词之间使用 “-”英文符号</p></div> <p>接口先暂定一个域名， 后面接口不再重复域名，并且客户端要兼容“/path/xxx”和“http://xxx.com/path/xxx”
+这种两种路径格式, 涉及用户账号信息部分使用https接口<br>
+接口原则为，尽量兼容http协议，少增加自定义部分</p> <ul><li>GET 服务器拉取数据</li> <li>POST 向服务器提交数据</li> <li>PUT 更新数据</li> <li>DELETE 删除数据</li></ul> <h2 id="全局上行参数"><a href="#全局上行参数" class="header-anchor">#</a> 全局上行参数</h2> <h3 id="header部分"><a href="#header部分" class="header-anchor">#</a> header部分</h3> <p>User-Agent 为手机型号或者用户浏览器的UA<br>
+Accept-Encoding: gzip, deflate<br>
+Accept: */*</p> <h3 id="表单部分"><a href="#表单部分" class="header-anchor">#</a> 表单部分</h3> <p>pf 手机平台 platform 缩写，为ios 、 android 、jailbreak<br>
+pf_ver 平台版本 platform_version 缩写<br>
+man 设备厂商 manufacturer缩写<br>
+mod 设备型号 model缩写<br>
+sid 用户身份令牌，本地需要保存，在登录或者更改密码后，会被更改掉 格式为 用户ID + s + 密钥串加密<br>
+verc 版本号， 格式 x.y 格式，x和y必须都是数字<br>
+ver 版本名称<br>
+lat 纬度latitude，如果没有，为空<br>
+lon 经度longitude 如果没有，为空<br>
+ts 时间戳信息timestamp缩写, 必须为整型时间，秒<br>
+net 网络制式 2g 3g 4g wifi<br>
+h 签名验证字段， 生成规则： md5(md5(提交表单数据，键值对字典排序 &amp;连接) 小写) + ckey)<br>
+fr 渠道来源<br>
+ckey 客户端指纹<br>
+dno 设备号device_no 缩写， 客户端各自实现，必须支持合法校验<br>
+an   协议版本号<br>
+lang 客户端本地语言 zh-CN 中文简体 en英语 ja日语 de德语 es西班牙语 fr法语 ko韩语 pt葡萄牙语 ru俄语 ar阿拉伯<br>
+code , 值为产品渠道code<br>
+tz, 'Asia/Shanghai', 时区 string</p> <h2 id="全局下行错误参数"><a href="#全局下行错误参数" class="header-anchor">#</a> 全局下行错误参数</h2> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>客户端需要判断http的状态码，200为正常，其他状态参考http协议,返回的body部分为json结构，有公共部分</p></div> <p>error_reason，错误原因解释，正常为空字符串<br>
+error_code, 错误代码，正常为0， 其他数字均为错误<br>
+error_url , 如果有，需要客户端提醒error_reason 后，用户确认后，跳到该地址<br>
+now_at , 服务器当前时间 int 精确到秒</p> <table><thead><tr><th>Error_code</th> <th>Error_reason</th></tr></thead> <tbody><tr><td>0</td> <td>正常</td></tr> <tr><td>-1</td> <td>一般错误</td></tr> <tr><td>-2</td> <td>各种业务自定义弹窗类错误,返回数据中带有tip_popup对象</td></tr> <tr><td>-100到-199</td> <td>账户相关错误</td></tr> <tr><td>-100</td> <td>需要登录</td></tr> <tr><td>-101</td> <td>帐号被封</td></tr> <tr><td>-102</td> <td>设备被封</td></tr> <tr><td>-400到-499</td> <td>表单提示错</td></tr> <tr><td>-400</td> <td>表单参数不符合</td></tr> <tr><td>-401</td> <td>贵族计费</td></tr> <tr><td>-402</td> <td>钻石计费</td></tr> <tr><td>-403</td> <td>认证</td></tr></tbody></table> <h2 id="文件直传阿里云"><a href="#文件直传阿里云" class="header-anchor">#</a> 文件直传阿里云</h2> <div class="language- extra-class"><pre><code>http-get
+   接口地址: /upload/prepare
+
+   上行参数:
+       id: '1' 用户ID,可以不传
+       sid: 用户的sid 可以不传
+       filename: 'a.jpg' 不能为空
+       size: 100X200 上传图片的尺寸,可不传
+       scene: 场景 user用户相关 feed动态 chat聊天 album相册 advises意见反馈 complain举报 agora声网相关 wait_dialog坐聊
+       sincere_answer 真心话答案 assistant_message聊天搭讪小助手
+
+   返回值:
+   {
+       error_code: 0/-1
+       error_reason: ''
+       status_code: 200/400/500
+       access_key_id: 'AccessKeyId'
+       access_key_secret: 'AccessKeySecret'
+       expiration: '2019-01-16T06:32:54Z'
+       security_token: 'SecurityToken'
+       endpoint: 'cn-shanghai'
+       bucket: 'bucket'
+       upload_filename: '/upload/5c3ecc8fc669e.jpg'
+   }
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">提示</p> <p>获取参数并且上传文件成功之后, upload_filename值传给应用服务器实际接口, 参数格式是对应字段+ '_oss_url'
+比如头像: avatar_oss_url, 文件: file_oss_url ..等, 多个文件名用,隔</p></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.266af1c3.js" defer></script><script src="/assets/js/2.0861db78.js" defer></script><script src="/assets/js/6.4a1f583a.js" defer></script>
+  </body>
+</html>

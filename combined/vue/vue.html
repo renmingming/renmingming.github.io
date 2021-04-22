@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue3 | VuePress</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Just playing around">
+    <link rel="preload" href="/assets/css/0.styles.3f949b7f.css" as="style"><link rel="preload" href="/assets/js/app.266af1c3.js" as="script"><link rel="preload" href="/assets/js/2.0861db78.js" as="script"><link rel="preload" href="/assets/js/11.78a8ae46.js" as="script"><link rel="prefetch" href="/assets/js/10.7858b385.js"><link rel="prefetch" href="/assets/js/12.b2277f4c.js"><link rel="prefetch" href="/assets/js/13.ce8da26a.js"><link rel="prefetch" href="/assets/js/14.5bc1d6e3.js"><link rel="prefetch" href="/assets/js/15.0ca5b6ca.js"><link rel="prefetch" href="/assets/js/16.3ff01d64.js"><link rel="prefetch" href="/assets/js/3.8099ba9f.js"><link rel="prefetch" href="/assets/js/4.ce18d72f.js"><link rel="prefetch" href="/assets/js/5.adfb67bc.js"><link rel="prefetch" href="/assets/js/6.4a1f583a.js"><link rel="prefetch" href="/assets/js/7.507a8e2d.js"><link rel="prefetch" href="/assets/js/8.40e91942.js"><link rel="prefetch" href="/assets/js/9.6772c857.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3f949b7f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VuePress</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/common/basics/basics.html" class="nav-link">
+  常见知识点
+</a></div><div class="nav-item"><a href="/combined/typescript/typescript.html" class="nav-link">
+  综合
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/common/basics/basics.html" class="nav-link">
+  常见知识点
+</a></div><div class="nav-item"><a href="/combined/typescript/typescript.html" class="nav-link">
+  综合
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>综合</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/combined/cmd/cmd.html" class="sidebar-link">常用命令</a></li><li><a href="/combined/typescript/typescript.html" class="sidebar-link">Typescript</a></li><li><a href="/combined/postgresql/postgresql.html" class="sidebar-link">PostgreSQL</a></li><li><a href="/combined/redis/redis.html" class="sidebar-link">Redis</a></li><li><a href="/combined/vue/vue.html" aria-current="page" class="active sidebar-link">Vue</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/combined/vue/vue.html#props中设置type类型使用proptype：" class="sidebar-link">props中设置type类型使用PropType：</a></li><li class="sidebar-sub-header"><a href="/combined/vue/vue.html#提取props定义，const声明中age得required无效-加as-const解决" class="sidebar-link">提取props定义，const声明中age得required无效,加as const解决</a></li><li class="sidebar-sub-header"><a href="/combined/vue/vue.html#h函数" class="sidebar-link">h函数</a></li><li class="sidebar-sub-header"><a href="/combined/vue/vue.html#watcheffect" class="sidebar-link">watchEffect</a></li><li class="sidebar-sub-header"><a href="/combined/vue/vue.html#setup" class="sidebar-link">setup</a></li><li class="sidebar-sub-header"><a href="/combined/vue/vue.html#jsx处使用" class="sidebar-link">jsx处使用</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue3"><a href="#vue3" class="header-anchor">#</a> Vue3</h1> <h2 id="props中设置type类型使用proptype："><a href="#props中设置type类型使用proptype：" class="header-anchor">#</a> props中设置type类型使用PropType：</h2> <div class="language- extra-class"><pre><code>```
+interface Config{
+    name: string
+}
+props: {
+    age: {
+        type: Number as PropType&lt;number&gt;,
+        required: true
+    },
+    config: {
+        type: Object as PropType&lt;Congif&gt;,
+        required: true
+    }
+}
+```
+</code></pre></div><h2 id="提取props定义，const声明中age得required无效-加as-const解决"><a href="#提取props定义，const声明中age得required无效-加as-const解决" class="header-anchor">#</a> 提取props定义，const声明中age得required无效,加as const解决</h2> <div class="language- extra-class"><pre><code>```
+const PropsType = {
+    msg: String,
+    age: {
+        type: Number,
+        required:true
+    }
+} as const
+props: PropsType
+```
+</code></pre></div><h2 id="h函数"><a href="#h函数" class="header-anchor">#</a> h函数</h2> <div class="language- extra-class"><pre><code>    参数1：节点，
+    参数2：属性
+    参数3：子类节点
+    .vue文件实际就是在写h函数
+    h函数是对createVNode做了判断
+```
+&lt;template&gt;
+    &lt;div id='app'&gt; 
+        &lt;img src='./logo.png' alt='' /&gt;
+        &lt;HelloWorld msg='hellow' :age='12'&gt;&lt;/HelloWord&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+上下对应
+    defineComponent({
+        data() {
+            
+        },
+        render() {
+            return h('div', { id: 'app'}, [
+                h('img', {
+                    alt: 'vue logo',
+                    src: './logo.png'
+                }),
+                h(HelloWorld, {
+                    msg: 'hellow',
+                    age: 12
+                })
+            ])
+        }
+    })
+```
+</code></pre></div><h2 id="watcheffect"><a href="#watcheffect" class="header-anchor">#</a> watchEffect</h2> <div class="language- extra-class"><pre class="language-text"><code>只要在watchEffect中使用的ref或者reactive，都会重新执行watchEffect中的函数
+watchEffect(() =&gt; {
+    console.log(nameRef.value)
+})
+</code></pre></div><h2 id="setup"><a href="#setup" class="header-anchor">#</a> setup</h2> <p>只执行一次</p> <div class="language- extra-class"><pre class="language-text"><code>setup() {
+    const state = reactive({
+        name: 'rmm'
+    })
+    const nameRef = ref(1);
+    setInterval(() =&gt; {
+        nameRef.value += 1;
+    }, 1000)
+    return () =&gt; {
+        const number = nameRef.value; // 必须卸载return函数里面才有效
+        return h('div', { id: 'app'}, [
+            h('img', { 
+                alt: 'hellow',
+                src: imgUrl
+            }),
+            h(HellowWord, {
+                'msg': 'renming'
+            }),
+            h('p', state.name + number)
+        ])
+    }
+</code></pre></div><h2 id="jsx处使用"><a href="#jsx处使用" class="header-anchor">#</a> jsx处使用</h2> <p>相对于模板：灵活、类型检测、可使用函数</p> <div class="language- extra-class"><pre class="language-text"><code>function renderHellow(msg: string) {
+    return &lt;HellowWord msg={msg}/&gt;;
+}
+export default defineComponent({
+    setup() {
+        const state = reactive({
+            name: 'rmm'
+        })
+        const nameRef = ref(1);
+        setInterval(() =&gt; {
+            state.name += '1';
+            nameRef.value += 1;
+        }, 1000)
+        return () =&gt; {
+            const number = nameRef.value;
+            return (
+                &lt;div id=&quot;app&quot;&gt;
+                    &lt;img src={imgUrl} alt=&quot;vue logo&quot;/&gt;
+                    &lt;p&gt;{ state.name + number}&lt;/p&gt;
+                    &lt;input type=&quot;text&quot; v-model={state.name}/&gt;
+                    {renderHellow('rmmmm')}
+                &lt;/div&gt;
+            );
+            // return h('div', { id: 'app'}, [
+            //     h('img', { 
+            //         alt: 'hellow',
+            //         src: imgUrl
+            //     }),
+            //     h(HellowWord, {
+            //         'msg': 'renming'
+            //     }),
+            //     h('p', state.name + number)
+            // ])
+        }
+    }
+})
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/combined/redis/redis.html" class="prev">
+        Redis
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.266af1c3.js" defer></script><script src="/assets/js/2.0861db78.js" defer></script><script src="/assets/js/11.78a8ae46.js" defer></script>
+  </body>
+</html>

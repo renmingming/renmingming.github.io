@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>postgresql | VuePress</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Just playing around">
+    <link rel="preload" href="/assets/css/0.styles.3f949b7f.css" as="style"><link rel="preload" href="/assets/js/app.266af1c3.js" as="script"><link rel="preload" href="/assets/js/2.0861db78.js" as="script"><link rel="preload" href="/assets/js/8.40e91942.js" as="script"><link rel="prefetch" href="/assets/js/10.7858b385.js"><link rel="prefetch" href="/assets/js/11.78a8ae46.js"><link rel="prefetch" href="/assets/js/12.b2277f4c.js"><link rel="prefetch" href="/assets/js/13.ce8da26a.js"><link rel="prefetch" href="/assets/js/14.5bc1d6e3.js"><link rel="prefetch" href="/assets/js/15.0ca5b6ca.js"><link rel="prefetch" href="/assets/js/16.3ff01d64.js"><link rel="prefetch" href="/assets/js/3.8099ba9f.js"><link rel="prefetch" href="/assets/js/4.ce18d72f.js"><link rel="prefetch" href="/assets/js/5.adfb67bc.js"><link rel="prefetch" href="/assets/js/6.4a1f583a.js"><link rel="prefetch" href="/assets/js/7.507a8e2d.js"><link rel="prefetch" href="/assets/js/9.6772c857.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3f949b7f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VuePress</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/common/basics/basics.html" class="nav-link">
+  常见知识点
+</a></div><div class="nav-item"><a href="/combined/typescript/typescript.html" class="nav-link">
+  综合
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/common/basics/basics.html" class="nav-link">
+  常见知识点
+</a></div><div class="nav-item"><a href="/combined/typescript/typescript.html" class="nav-link">
+  综合
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>综合</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/combined/cmd/cmd.html" class="sidebar-link">常用命令</a></li><li><a href="/combined/typescript/typescript.html" class="sidebar-link">Typescript</a></li><li><a href="/combined/postgresql/postgresql.html" aria-current="page" class="active sidebar-link">PostgreSQL</a></li><li><a href="/combined/redis/redis.html" class="sidebar-link">Redis</a></li><li><a href="/combined/vue/vue.html" class="sidebar-link">Vue</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="postgresql"><a href="#postgresql" class="header-anchor">#</a> postgresql</h1> <p>1、进入命令</p> <div class="language- extra-class"><pre class="language-text"><code>psql -U postgres
+</code></pre></div><p>2、启动</p> <div class="language- extra-class"><pre class="language-text"><code>pg_ctl start
+</code></pre></div><p>3、创建表</p> <div class="language- extra-class"><pre class="language-text"><code>create table 表名(
+  id serial PRIMARY key not null,
+  name VARCHAR(255),
+)
+
+自动增长：serial || smallserial || bigserial
+</code></pre></div><p>4、常用命令</p> <div class="language- extra-class"><pre class="language-text"><code>创建数据库： create database [数据库名];
+
+查看现存的数据库： \l;
+
+从一个数据库跳到另一个： \c [调走的数据库名];
+
+查看表： \dt;
+
+查看表结构： \d [表名];
+
+删除数据库： drop database [name];
+
+删除表数据；TRUNCATE TABLE  table_name;
+          truncate table talbe_name;
+
+删除用户：drop user renming；
+</code></pre></div><p>5、创建模式</p> <div class="language- extra-class"><pre class="language-text"><code>create schema myschema;
+//常见表格
+create table myschema.company(
+  id Int NOt NULL
+)
+</code></pre></div><p>6、插入多行</p> <div class="language- extra-class"><pre class="language-text"><code>INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00, '2007-12-13' ), (5, 'David', 27, 'Texas', 85000.00, '2007-12-13');
+</code></pre></div><p>7、事务</p> <div class="language- extra-class"><pre class="language-text"><code>开始一个事务
+begin; || begin transaction;
+
+确认事务
+commit;  ||  end transaction;
+
+撤销回滚事务
+rollback;
+</code></pre></div><p>8、锁-lock</p> <p>排它锁 exclusive locks  ： 其他的事务不能对他读取和修改</p> <p>共享锁 share locks ： 可以被其他事务读取，但不能修改</p> <p>lock_mode:  ACCESS SHARE，ROW SHARE， ROW EXCLUSIVE， SHARE UPDATE EXCLUSIVE， SHARE，SHARE ROW EXCLUSIVE，EXCLUSIVE，ACCESS EXCLUSIVE。</p> <p>lock语句只在事务模式下工作</p> <div class="language- extra-class"><pre class="language-text"><code>begin;
+lock table table_name in acess exclusive mode;
+
+table_name表被锁定，知道事务结束，并且要完成事务，必须回滚或者提交事务 commit|| end transaction || rollback;
+</code></pre></div><p>9、权限</p> <div class="language- extra-class"><pre class="language-text"><code>设置权限语法
+  grant privilege [,...]
+  on object [,...]
+  to {public | GROUP group | username}
+
+  privilege − 值可以为：SELECT，INSERT，UPDATE，DELETE， RULE，ALL。
+  object − 要授予访问权限的对象名称。可能的对象有： table， view，sequence。
+  PUBLIC − 表示所有用户。
+  GROUP group − 为用户组授予权限。
+  username − 要授予权限的用户名。PUBLIC 是代表所有用户的简短形式。
+
+取消权限：revoke
+
+示例：
+
+  创建用户：
+  create user renmingming with password 'password';
+
+  GRANT ALL on company to renmingming;  // 信息grant表示所有权限已经分配给了“renmingming”用户
+
+</code></pre></div><p>10、链表查询</p> <div class="language- extra-class"><pre class="language-text"><code>$receiver_sql = &quot;select d.receiver_id as user_id,sum(d.duration) total_duration,max(d.created_at)
+from dialogs as d left join users as u on d.receiver_id = u.id
+where u.user_type = :user_type and d.duration &gt; 0 and d.created_at &gt; :begin_at and d.created_at &lt; :end_at GROUP BY user_id ORDER BY total_duration desc;&quot;;
+</code></pre></div><p>11、联合索引</p> <div class="language- extra-class"><pre class="language-text"><code>create index user_id_currency_id_on_balances on balances(user_id,currency_id);
+</code></pre></div><p>12、添加、修改、删除字段</p> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">alter</span> <span class="token keyword">table</span> invite_histories <span class="token keyword">alter</span> <span class="token keyword">column</span> third_id <span class="token keyword">type</span> <span class="token keyword">varchar</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> products <span class="token keyword">add</span> <span class="token keyword">column</span> payment_currency <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> users <span class="token keyword">drop</span> <span class="token keyword">column</span> real_person_status<span class="token punctuation">;</span>
+<span class="token keyword">create</span> <span class="token keyword">index</span> payment_currency_on_products <span class="token keyword">on</span> products<span class="token punctuation">(</span>payment_currency<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>13、创建表</p> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">create</span> <span class="token keyword">table</span> rooms<span class="token punctuation">(</span>
+    id <span class="token keyword">serial</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    city_id <span class="token keyword">integer</span> <span class="token punctuation">,</span>
+    manager_user_ids <span class="token keyword">varchar</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    face_attributes <span class="token keyword">text</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/combined/typescript/typescript.html" class="prev">
+        Typescript
+      </a></span> <span class="next"><a href="/combined/redis/redis.html">
+        Redis
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.266af1c3.js" defer></script><script src="/assets/js/2.0861db78.js" defer></script><script src="/assets/js/8.40e91942.js" defer></script>
+  </body>
+</html>

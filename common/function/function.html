@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>函数对象 | VuePress</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Just playing around">
+    <link rel="preload" href="/assets/css/0.styles.3f949b7f.css" as="style"><link rel="preload" href="/assets/js/app.266af1c3.js" as="script"><link rel="preload" href="/assets/js/2.0861db78.js" as="script"><link rel="preload" href="/assets/js/14.5bc1d6e3.js" as="script"><link rel="prefetch" href="/assets/js/10.7858b385.js"><link rel="prefetch" href="/assets/js/11.78a8ae46.js"><link rel="prefetch" href="/assets/js/12.b2277f4c.js"><link rel="prefetch" href="/assets/js/13.ce8da26a.js"><link rel="prefetch" href="/assets/js/15.0ca5b6ca.js"><link rel="prefetch" href="/assets/js/16.3ff01d64.js"><link rel="prefetch" href="/assets/js/3.8099ba9f.js"><link rel="prefetch" href="/assets/js/4.ce18d72f.js"><link rel="prefetch" href="/assets/js/5.adfb67bc.js"><link rel="prefetch" href="/assets/js/6.4a1f583a.js"><link rel="prefetch" href="/assets/js/7.507a8e2d.js"><link rel="prefetch" href="/assets/js/8.40e91942.js"><link rel="prefetch" href="/assets/js/9.6772c857.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3f949b7f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VuePress</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/common/basics/basics.html" class="nav-link">
+  常见知识点
+</a></div><div class="nav-item"><a href="/combined/typescript/typescript.html" class="nav-link">
+  综合
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/common/basics/basics.html" class="nav-link">
+  常见知识点
+</a></div><div class="nav-item"><a href="/combined/typescript/typescript.html" class="nav-link">
+  综合
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>常见知识点</span> <!----></p> <!----></section></li><li><a href="/common/basics/basics.html" class="sidebar-link">基础部分</a></li><li><a href="/common/dom/dom.html" class="sidebar-link">DOM</a></li><li><a href="/common/function/function.html" aria-current="page" class="active sidebar-link">函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/common/function/function.html#常见函数的四种类型" class="sidebar-link">常见函数的四种类型</a></li><li class="sidebar-sub-header"><a href="/common/function/function.html#变量和函数的提升" class="sidebar-link">变量和函数的提升</a></li><li class="sidebar-sub-header"><a href="/common/function/function.html#作用域、作用链、执行环境、执行上下文" class="sidebar-link">作用域、作用链、执行环境、执行上下文</a></li><li class="sidebar-sub-header"><a href="/common/function/function.html#重载和多态的使用场景" class="sidebar-link">重载和多态的使用场景</a></li><li class="sidebar-sub-header"><a href="/common/function/function.html#闭包" class="sidebar-link">闭包</a></li><li class="sidebar-sub-header"><a href="/common/function/function.html#call、apply、bind使用场景" class="sidebar-link">call、apply、bind使用场景</a></li><li class="sidebar-sub-header"><a href="/common/function/function.html#new的执行过程" class="sidebar-link">new的执行过程</a></li><li class="sidebar-sub-header"><a href="/common/function/function.html#this-谁调用指向谁" class="sidebar-link">this 谁调用指向谁</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="函数对象"><a href="#函数对象" class="header-anchor">#</a> 函数对象</h1> <h2 id="常见函数的四种类型"><a href="#常见函数的四种类型" class="header-anchor">#</a> 常见函数的四种类型</h2> <ul><li>匿名函数</li> <li>回调函数</li> <li>递归函数</li> <li>构造函数</li></ul> <h2 id="变量和函数的提升"><a href="#变量和函数的提升" class="header-anchor">#</a> 变量和函数的提升</h2> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>js解析：预编译期 与执行期
+预编译预解析，解析时，会对所有声明的变量和函数进行处理，先预声明变量在定义函数
+变量声明提升，值停留在当前本地，函数整个代码提前，如果使用var fn声明函数，变量提前，函数体停留在本地</p></div> <div class="language- extra-class"><pre class="language-text"><code>console.log(a); // undefined
+var a = 10;
+function test() {
+    a = 100;
+    console.log(a); // 100 a声明提升
+    var a;
+    console.log(a); // 100
+    console.log(fun); // function fun() {}
+    console.log(fun1); // undefined
+}
+function fun() {};
+test();
+var fun1 = function() {};
+console.log(a) // 10不是100因为函数内的局部变量已经被释放，并且作用域到不了外面
+
+#提升过后的执行的代码
+
+var a,fun1;
+console.log(a);
+a = 10;
+function test() {
+    var a; // 没有声明的话，会将外面的a改掉
+    a = 100;
+    console.log(a); // 100 a声明提升
+    console.log(a); // 100
+    console.log(fun); // function fun() {}
+    console.log(fun1); // undefined
+}
+function fun() {};
+test();
+fun1 = function() {};
+console.log(a);
+</code></pre></div><h2 id="作用域、作用链、执行环境、执行上下文"><a href="#作用域、作用链、执行环境、执行上下文" class="header-anchor">#</a> 作用域、作用链、执行环境、执行上下文</h2> <ul><li>全局作用域 window</li> <li>函数作用域 function(){}</li></ul> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>函数内可访问到外部的变量，外面访问不到函数内变量；
+函数创建时会指向他的作用链，先时他的本身函数作用域，在是全局作用域；
+执行环境（执行上下文）：全局执行环境和局部执行环境；变量对象、活动对象</p></div> <div class="language- extra-class"><pre class="language-text"><code>function a() {
+    function b() {
+        var bb = 234;
+    }
+    var a = 123;
+}
+var glob = 12;
+a();
+console.log(b) // 报错获取不到，bb a也一样
+
+
+#示例
+var buttons = [{name: 'n1'}, {name: 'b2'}, {name: 'n3'}];
+function bind() {
+    for (var i = 0; i &lt; buttons.length; i++) {
+        buttons[i].fun = function() {
+            alert(i);
+        }
+    }
+}
+bind();
+buttons[0].fun(); //3
+buttons[1].fun(); // 3
+buttons[2].fun(); // 3
+
+// 立即执行可打印出0、1、2
+(function(num) {
+    buttons[i].fun = function() {
+        alert(num);
+    }
+})(i)
+</code></pre></div><h2 id="重载和多态的使用场景"><a href="#重载和多态的使用场景" class="header-anchor">#</a> 重载和多态的使用场景</h2> <p>重载：可以定义相同名字，不同参数的形式的不同函数，在调用的函数的时候，自动识别不同参数对应的函数，实现了相同函数名不同函数的调用；
+js本身没有重载，可通过arguments实现函数重载</p> <p>多态：同一个东西在不同情况下表现不同状态：重写和重载</p> <div class="language- extra-class"><pre class="language-text"><code>// 长方形和正方形面积x*x,x*y
+function react() {
+    //arguments 类数组
+    if (arguments.length &gt;= 1) {
+        this.widht = arguments[0];
+        this.height = arguments[0];
+    }
+    if (arguments.length &gt; 1) {
+        this.widht = arguments[0];
+        this.height = arguments[1];
+    }
+    this.toString = function() {
+        return 'width:' + this.width + ' height:' + this.height;
+    }
+}
+</code></pre></div><h2 id="闭包"><a href="#闭包" class="header-anchor">#</a> 闭包</h2> <p>本质还是作用域问题；
+概念：引用了自由变量的函数，这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造他的环境也不例外；实现信息的驻留（信息的保持，引用在，空间不销毁）；</p> <div class="language- extra-class"><pre class="language-text"><code>#简单闭包
+var Person = function() {
+    var count = 0;
+    return function getCount() {
+        console.log(count++);
+    }
+}
+var p = Person();
+p(); // 0
+p(); // 1
+</code></pre></div><h2 id="call、apply、bind使用场景"><a href="#call、apply、bind使用场景" class="header-anchor">#</a> call、apply、bind使用场景</h2> <p>属于Function对象上
+apply方法能劫持另一个对象的方法，继承另一个对象的属性；
+Function.apply(obj, args),接受两个参数
+obj：这个对象将代替Function类里的this对象，args数组
+call，参数是单个传入，apply是数组传入
+call和apply立即执行，bind需要一个变量接受之后在执行</p> <div class="language- extra-class"><pre class="language-text"><code>var stu1 = {
+    name: 'jack',
+    age: 18,
+    say: function(school, grade) {
+        console.log(this.name + '今年 ' + school + '年级' + grade);
+    }
+}
+var stu2 = {
+    name: 'Tom'
+}
+stu1.say.apply(stu2, ['清华', '一'])// 此时stu1的方法say中的this。已经指向与stu2，所以name为Tom
+stu1.say.call(stu2, '清华', '一')
+
+
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">提示</p> <p>lei数组转数组的应用：
+var arr = Array.prototype.slice.apply(arguments)；
+// 手动实现bind方法
+Function.prototype.newBind = function(obj) {
+var self = this;
+return function() {
+self.apply(obj);
+}
+}</p></div> <h2 id="new的执行过程"><a href="#new的执行过程" class="header-anchor">#</a> new的执行过程</h2> <p>1、创建新对象
+var obj = new Object();
+2、把obje的proto指向构造函数的prototype对象，实现继承，相关起来
+obj.<strong>proto</strong> = Fn.prototype
+3、将obj作为this的上下文
+var result = Fn.call(obj);
+4、返回创建的对象，如果函数没有返回对象，则返回this
+if (type result == 'object') {
+return result;
+} else {
+return obj
+}</p> <h2 id="this-谁调用指向谁"><a href="#this-谁调用指向谁" class="header-anchor">#</a> this 谁调用指向谁</h2> <p>指当前调用的这个对象： 4中绑定规则：默认绑定、隐私绑定、显示绑定、new绑定优先级有底到高
+改变this指向使用call、apply、bind</p> <div class="language- extra-class"><pre class="language-text"><code>var man = {
+    name: 'Tom',
+    age: 30,
+    getName: function() {
+        console.log(this.name)
+    },
+    getAge: function() {
+        function aa() { // 局部函数
+            console.log(this + ' ' + this.age) // 局部函数this执行的是window,所以this.age为undefined
+        }
+        aa(); // window.aa()
+        console.log(this + ' ' + this.age); // 30
+    }
+}
+man.getName() // getName中的this指向的man，所以打印的是Tom
+man.getAge()
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/common/dom/dom.html" class="prev">
+        DOM
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.266af1c3.js" defer></script><script src="/assets/js/2.0861db78.js" defer></script><script src="/assets/js/14.5bc1d6e3.js" defer></script>
+  </body>
+</html>
